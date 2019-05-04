@@ -4,10 +4,10 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2 align="center">List of Comments</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Add a Comment", "Create")
 </p>
 <table class="table">
     <tr>
@@ -24,7 +24,6 @@
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.commentID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.commentID }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.commentID })
         </td>
     </tr>

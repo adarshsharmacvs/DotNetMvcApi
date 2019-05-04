@@ -188,6 +188,7 @@
       <LastGenOutput>DataModels.Context.cs</LastGenOutput>
       <DependentUpon>DataModels.edmx</DependentUpon>
     </Content>
+    <Content Include="Models\DataModels.edmx.sql" />
     <Content Include="Models\DataModels.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>DataModels.edmx</DependentUpon>
@@ -227,9 +228,9 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\comments\Create.cshtml" />
     <Content Include="Views\comments\Delete.cshtml" />
-    <Content Include="Views\comments\Details.cshtml" />
     <Content Include="Views\comments\Edit.cshtml" />
     <Content Include="Views\comments\Index.cshtml" />
+    <Content Include="Views\comments\UserError.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

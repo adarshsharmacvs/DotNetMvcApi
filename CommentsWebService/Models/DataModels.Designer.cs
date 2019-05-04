@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'E:\Users\Adarsh\source\repos\CommentsWebService\CommentsWebService\Models\DataModels.edmx'. 
+﻿// T4 code generation is enabled for model 'E:\vscode\CommentsWebService\CommentsWebService\Models\DataModels.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

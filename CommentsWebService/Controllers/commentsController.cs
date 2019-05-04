@@ -27,21 +27,6 @@ namespace CommentsWebService.Controllers
             return View(await comments.ToListAsync());
         }
 
-        // GET: comments/Details/5
-        public async Task<ActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            comment comment = await db.comments.FindAsync(id);
-            if (comment == null)
-            {
-                return HttpNotFound();
-            }
-            return View(comment);
-        }
-
         // GET: comments/Create
         public ActionResult Create()
         {
@@ -49,18 +34,23 @@ namespace CommentsWebService.Controllers
         }
 
         // POST: comments/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create([Bind(Include = "commentID,commentDescription")] comment comment)
         {
             if (ModelState.IsValid)
-            {
-                db.comments.Add(comment);
-                await db.SaveChangesAsync();
-                return RedirectToAction("Index");
-            }
+                try
+                {
+                    {
+                        db.comments.Add(comment);
+                        await db.SaveChangesAsync();
+                        return RedirectToAction("Index");
+                    }
+                }
+                catch (Exception e)
+                {
+                    return RedirectToAction("Error");
+                }
 
             return View(comment);
         }
@@ -81,8 +71,6 @@ namespace CommentsWebService.Controllers
         }
 
         // POST: comments/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Edit([Bind(Include = "commentID,commentDescription")] comment comment)
@@ -129,6 +117,11 @@ namespace CommentsWebService.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        public ActionResult Error()
+        {
+            return View("UserError");
         }
     }
 }

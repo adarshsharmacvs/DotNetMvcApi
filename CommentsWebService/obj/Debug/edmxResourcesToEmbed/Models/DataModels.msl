@@ -2,7 +2,7 @@
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="CommentsModelStoreContainer" CdmEntityContainer="DBModel">
     <EntitySetMapping Name="comments">
-      <EntityTypeMapping TypeName="CommentsModel.comment">
+      <EntityTypeMapping TypeName="IsTypeOf(CommentsModel.comment)">
         <MappingFragment StoreEntitySet="comments">
           <ScalarProperty Name="commentID" ColumnName="commentID" />
           <ScalarProperty Name="commentDescription" ColumnName="commentDescription" />

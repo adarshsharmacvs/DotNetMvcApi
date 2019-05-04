@@ -11,10 +11,14 @@ namespace CommentsWebService.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+
     public partial class comment
     {
+        [DisplayName("Unique Comment Number")] //On the display it will depict as Comment Number
         public int commentID { get; set; }
+
+        [DisplayName("Comment")]
         public string commentDescription { get; set; }
     }
 }
